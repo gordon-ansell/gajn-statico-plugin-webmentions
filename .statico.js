@@ -23,6 +23,7 @@ async function afterParsedTemplateFile(cfg, tf)
     let url = cfg.hostname + tf.data.permalink;
 
     // Received.
+    syslog.error('checking: ' + url)
     let wmentions = proc.mentionsForUrl(url);
     if (wmentions && wmentions.length > 0) {
         tf.data.wmentions = wmentions;
