@@ -85,6 +85,7 @@ module.exports = async function(config, options = {}) {
     });
 
     config.addCallable('convWmDate', function(cfg, dt) {
+        const dateformat = require('dateformat');
         let dobj = new Date(dt);
         return dateformat(dobj, cfg.dispDate) + ', ' + dateformat(dobj, cfg.dispTime);
     });
