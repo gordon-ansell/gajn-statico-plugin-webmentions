@@ -73,16 +73,10 @@ class WebmentionsProcessor
      */
     mentionsForUrl(url)
     {
-        if ("https://gordonansell.com/star-trek-discover-review-old-meets-new-in-a-pleasing-balance/" == url) {
-            syslog.error('1')
-        }
         if (!this.mentions) {
             return null;
         }
 
-        if ("https://gordonansell.com/star-trek-discover-review-old-meets-new-in-a-pleasing-balance/" == url) {
-            syslog.error('2')
-        }
         const hasRequiredFields = (entry) => {
             const { author, published, content } = entry
             return author.name && published && content
@@ -101,11 +95,6 @@ class WebmentionsProcessor
             .filter((entry) => this.spec.types.includes(entry['wm-property']))
             .filter(hasRequiredFields)
             .map(sanitize);
-
-        if ("https://gordonansell.com/star-trek-discover-review-old-meets-new-in-a-pleasing-balance/" == url) {
-            syslog.error('4')
-            syslog.inspect(ret, "error");
-        }
 
         return ret;
     
