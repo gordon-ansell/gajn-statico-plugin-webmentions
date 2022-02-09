@@ -154,7 +154,7 @@ class WebmentionsData
             return true;
         }  
 
-        let isDev = (this.cfg.mode == 'dev' || mode == 'dev') ? true : false;
+        let isDev = (this.cfg.mode == 'dev') ? true : false;
 
         let wmCached; 
         
