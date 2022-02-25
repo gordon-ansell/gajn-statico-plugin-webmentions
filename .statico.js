@@ -11,7 +11,7 @@ const path = require('path');
 const WebmentionsData = require('./src/webmentionsData');
 const WebmentionsProcessor = require('./src/webmentionsProcessor');
 const debug = require('debug')('Statico:plugin:webmentions'),
-      debugf = require('debug')('FStatico:plugin:webmentions');
+      debugf = require('debug')('Full.Statico:plugin:webmentions');
 
 
 async function afterParsedTemplateFile(cfg, tf)
