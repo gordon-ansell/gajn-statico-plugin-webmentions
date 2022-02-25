@@ -10,6 +10,9 @@ const { syslog, merge } = require('gajn-framework');
 const path = require('path');
 const WebmentionsData = require('./src/webmentionsData');
 const WebmentionsProcessor = require('./src/webmentionsProcessor');
+const debug = require('debug')('Statico:plugin:webmentions'),
+      debugf = require('debug')('FStatico:plugin:webmentions');
+
 
 async function afterParsedTemplateFile(cfg, tf)
 {
@@ -28,7 +31,7 @@ async function afterParsedTemplateFile(cfg, tf)
         tf.data.wmentions = wmentions;
         syslog.notice(`Post ${tf.data.permalink} has ${wmentions.length} webmentions.`);
     } else {
-        syslog.trace(`Post ${tf.data.permalink} has no webmentions.`);
+        debug(`Post ${tf.data.permalink} has no webmentions.`);
     }
 
     // To send.

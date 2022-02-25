@@ -22,6 +22,7 @@
 	],
 	"dependencies": {
 		"gajn-framework": "gordon-ansell/gajn-framework",
+        "debug": "*",
         "lodash": "*",
         "node-fetch": "2.6.7",
 		"sanitize-html": "*",
