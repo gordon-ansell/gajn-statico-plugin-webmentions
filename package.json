@@ -1,5 +1,5 @@
 {
-	"name": "gajn-statico-plugin-webmentions",
+	"name": "statico-plugin-webmentions",
 	"version": "0.1.0",
 	"description": "Webmentions plugin for Statico SSG.",
 	"homepage": "https://gordonansell.com/statico",
@@ -8,7 +8,7 @@
 	"main": ".statico.js",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/gordon-ansell/gajn-statico-plugin-webmentions"
+		"url": "git+https://github.com/gordon-ansell/statico-plugin-webmentions"
 	},
 	"authors": [
 		{
@@ -21,7 +21,7 @@
 		"src/"
 	],
 	"dependencies": {
-		"gajn-framework": "gordon-ansell/gajn-framework",
+		"js-framework": "gordon-ansell/js-framework",
         "debug": "*",
         "lodash": "*",
         "node-fetch": "2.6.7",
