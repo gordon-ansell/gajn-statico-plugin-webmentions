@@ -10,8 +10,8 @@ const path = require('path');
 const fs = require('fs');
 const sanitizeHTML = require('sanitize-html');
 const wmsend = require('send-webmention')
-const syslog = require('gajn-framework/src/logger/syslog');
-const { fsutils } = require('gajn-framework');
+const syslog = require('js-framework/src/logger/syslog');
+const { fsutils } = require('js-framework');
 
 /**
  * Webmentions processing class.

@@ -6,7 +6,7 @@
  */
 'use strict';
 
-const { syslog, merge } = require('gajn-framework');
+const { syslog, merge } = require('js-framework');
 const path = require('path');
 const WebmentionsData = require('./src/webmentionsData');
 const WebmentionsProcessor = require('./src/webmentionsProcessor');

@@ -10,7 +10,7 @@ const fetch = require('node-fetch');
 const unionBy = require('lodash/unionBy');
 const path = require('path');
 const fs = require('fs');
-const { syslog } = require('gajn-framework');
+const { syslog } = require('js-framework');
 
 /**
  * Webmentions data fetch class.
