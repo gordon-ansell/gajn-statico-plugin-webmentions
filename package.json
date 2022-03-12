@@ -1,6 +1,6 @@
 {
 	"name": "statico-plugin-webmentions",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "Webmentions plugin for Statico SSG.",
 	"homepage": "https://gordonansell.com/statico",
 	"license": "MIT",
