@@ -8,6 +8,7 @@
 
 const { syslog, merge } = require('js-framework');
 const path = require('path');
+const pack = require('./package.json');
 const WebmentionsData = require('./src/webmentionsData');
 const WebmentionsProcessor = require('./src/webmentionsProcessor');
 const debug = require('debug')('Statico:plugin:webmentions'),
@@ -89,4 +90,7 @@ module.exports = async function(config, options = {}) {
 
     config.events.on('statico.init.finished', afterInit);
     config.events.on('statico.parsedtemplatefile', afterParsedTemplateFile);
+
+    syslog.notice(`Statico webmentions plugin version ${pack.version} loaded.`);
+
 }
