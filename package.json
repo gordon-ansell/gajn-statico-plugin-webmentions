@@ -23,7 +23,7 @@
 	"dependencies": {
 		"js-framework": "gordon-ansell/js-framework",
         "debug": "4.3.4",
-        "lodash": "5.0.0",
+        "lodash": "4.17.21",
         "node-fetch": "2.6.7",
 		"sanitize-html": "2.7.0",
 		"send-webmention": "2.0.0"
