@@ -22,11 +22,11 @@
 	],
 	"dependencies": {
 		"js-framework": "gordon-ansell/js-framework",
-        "debug": "*",
-        "lodash": "*",
+        "debug": "4.3.4",
+        "lodash": "4.0.0",
         "node-fetch": "2.6.7",
-		"sanitize-html": "*",
-		"send-webmention": "*"
+		"sanitize-html": "2.7.0",
+		"send-webmention": "2.0.0"
 	},
 	"devDependencies": {},
 	"engines": {
