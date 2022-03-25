@@ -12,6 +12,7 @@ const sanitizeHTML = require('sanitize-html');
 const wmsend = require('send-webmention')
 const syslog = require('js-framework/src/logger/syslog');
 const { fsutils } = require('js-framework');
+const debugt = require('debug')('WM');
 
 /**
  * Webmentions processing class.
@@ -74,6 +75,7 @@ class WebmentionsProcessor
     mentionsForUrl(url)
     {
         if (!this.mentions) {
+            debugt('NO MENTIONS AT ALL');
             return null;
         }
 
