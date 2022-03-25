@@ -32,12 +32,13 @@ async function afterParsedTemplateFile(cfg, tf)
 
     // Received.
     let wmentions = proc.mentionsForUrl(url);
-    if (tf.data.permalink.indexOf("Star Trek: Discovery") !== -1) {
-        syslog.inspect(wmentions, "error", `${tf.data.permalink}`);
+    debug(`Testing webmentions for ${url}`);
+    if (url.indexOf("Star Trek: Discovery") !== -1) {
+        syslog.inspect(wmentions, "error", `${url}`);
     }
     if (wmentions && wmentions.length > 0) {
         tf.data.wmentions = wmentions;
-        syslog.inspect(tf.data, "error", `${tf.data.permalink}`);
+        syslog.inspect(tf.data, "error", `${url}`);
         syslog.notice(`Post ${tf.data.permalink} has ${wmentions.length} webmentions.`);
     } else {
         debug(`Post ${tf.data.permalink} has no webmentions.`);
