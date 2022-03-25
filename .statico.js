@@ -27,18 +27,10 @@ async function afterParsedTemplateFile(cfg, tf)
     // Save the URL.
     let url = cfg.hostname + tf.data.permalink;
 
-    if (url.indexOf("star-trek-discovery") !== -1) {
-        debugt(`In here: ${url}`);
-    }
-
     // Received.
     let wmentions = proc.mentionsForUrl(url);
-    if (url.indexOf("star-trek-discovery") !== -1) {
-        debugt(`wmentions: %O`, wmentions);
-    }
     if (wmentions && wmentions.length > 0) {
         tf.data.wmentions = wmentions;
-        //debugt(`tf.data: %O`, tf.data);
         syslog.notice(`Post ${tf.data.permalink} has ${wmentions.length} webmentions.`);
     } else {
         debug(`Post ${tf.data.permalink} has no webmentions.`);
