@@ -32,7 +32,7 @@ async function afterParsedTemplateFile(cfg, tf)
 
     // Received.
     let wmentions = proc.mentionsForUrl(url);
-    if (tf.data.indexof("Star Trek: Discovery" !== 0)) {
+    if (tf.data.permalink.indexof("Star Trek: Discovery" !== 0)) {
         syslog.inspect(wmentions, "error");
     }
     if (wmentions && wmentions.length > 0) {
