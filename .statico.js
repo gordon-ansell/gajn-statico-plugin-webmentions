@@ -12,7 +12,8 @@ const pack = require('./package.json');
 const WebmentionsData = require('./src/webmentionsData');
 const WebmentionsProcessor = require('./src/webmentionsProcessor');
 const debug = require('debug')('Statico:plugin:webmentions'),
-      debugf = require('debug')('Full.Statico:plugin:webmentions');
+      debugf = require('debug')('Full.Statico:plugin:webmentions'),
+      debugt = require('debug')('WM');
 
 
 async function afterParsedTemplateFile(cfg, tf)
@@ -26,19 +27,18 @@ async function afterParsedTemplateFile(cfg, tf)
     // Save the URL.
     let url = cfg.hostname + tf.data.permalink;
 
-    if (tf.data.permalink.indexOf("Star Trek: Discovery") !== -1) {
-        syslog.warning(`In here: ${tf.data.permalink}`);
+    if (url.indexOf("star-trek-discovery") !== -1) {
+        debugt(`In here: ${url}`);
     }
 
     // Received.
     let wmentions = proc.mentionsForUrl(url);
-    debug(`Testing webmentions for ${url}`);
-    if (url.indexOf("Star Trek: Discovery") !== -1) {
-        syslog.inspect(wmentions, "error", `${url}`);
+    if (url.indexOf("star-trek-discovery") !== -1) {
+        debugt(`wmentions: %O`, wmentions);
     }
     if (wmentions && wmentions.length > 0) {
         tf.data.wmentions = wmentions;
-        syslog.inspect(tf.data, "error", `${url}`);
+        debugt(`tf.data: %O`, tf.data);
         syslog.notice(`Post ${tf.data.permalink} has ${wmentions.length} webmentions.`);
     } else {
         debug(`Post ${tf.data.permalink} has no webmentions.`);
