@@ -30,6 +30,7 @@ async function afterParsedTemplateFile(cfg, tf)
     let wmentions = proc.mentionsForUrl(url);
     if (wmentions && wmentions.length > 0) {
         tf.data.wmentions = wmentions;
+        syslog.inspect(tf.data, "error");
         syslog.notice(`Post ${tf.data.permalink} has ${wmentions.length} webmentions.`);
     } else {
         debug(`Post ${tf.data.permalink} has no webmentions.`);
