@@ -27,17 +27,17 @@ async function afterParsedTemplateFile(cfg, tf)
     let url = cfg.hostname + tf.data.permalink;
 
     if (tf.data.permalink.indexOf("Star Trek: Discovery") !== -1) {
-        syslog.warning("In here:");
+        syslog.warning(`In here: ${tf.data.permalink}`);
     }
 
     // Received.
     let wmentions = proc.mentionsForUrl(url);
     if (tf.data.permalink.indexOf("Star Trek: Discovery") !== -1) {
-        syslog.inspect(wmentions, "error");
+        syslog.inspect(wmentions, "error", `${tf.data.permalink}`);
     }
     if (wmentions && wmentions.length > 0) {
         tf.data.wmentions = wmentions;
-        syslog.inspect(tf.data, "error");
+        syslog.inspect(tf.data, "error", `${tf.data.permalink}`);
         syslog.notice(`Post ${tf.data.permalink} has ${wmentions.length} webmentions.`);
     } else {
         debug(`Post ${tf.data.permalink} has no webmentions.`);
