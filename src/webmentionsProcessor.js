@@ -74,10 +74,6 @@ class WebmentionsProcessor
      */
     mentionsForUrl(url)
     {
-        if (url.indexOf("star-trek-discovery") !== -1) {
-            debugt(`In the processor.`);
-        }
-
         if (!this.mentions) {
             return null;
         }
@@ -87,20 +83,12 @@ class WebmentionsProcessor
             return author.name && published && content
         }
 
-        if (url.indexOf("star-trek-discovery") !== -1) {
-            debugt(`Has required fields.`);
-        }
-
         const sanitize = (entry) => {
             const { content } = entry;
             if (content['content-type'] === 'text/html') {
                 content.value = sanitizeHTML(content.value);
             }
             return entry
-        }
-
-        if (url.indexOf("star-trek-discovery") !== -1) {
-            debugt(`Sanitized`);
         }
 
         let ret = this.mentions
