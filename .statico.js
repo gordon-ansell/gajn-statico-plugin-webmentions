@@ -26,13 +26,13 @@ async function afterParsedTemplateFile(cfg, tf)
     // Save the URL.
     let url = cfg.hostname + tf.data.permalink;
 
-    if (tf.data.permalink.indexOf("Star Trek: Discovery") !== 0) {
-        syslog.warning("In here");
+    if (tf.data.permalink.indexOf("Star Trek: Discovery") !== -1) {
+        syslog.warning("In here:");
     }
 
     // Received.
     let wmentions = proc.mentionsForUrl(url);
-    if (tf.data.permalink.indexOf("Star Trek: Discovery") !== 0) {
+    if (tf.data.permalink.indexOf("Star Trek: Discovery") !== -1) {
         syslog.inspect(wmentions, "error");
     }
     if (wmentions && wmentions.length > 0) {
