@@ -38,7 +38,7 @@ async function afterParsedTemplateFile(cfg, tf)
     }
     if (wmentions && wmentions.length > 0) {
         tf.data.wmentions = wmentions;
-        debugt(`tf.data: %O`, tf.data);
+        //debugt(`tf.data: %O`, tf.data);
         syslog.notice(`Post ${tf.data.permalink} has ${wmentions.length} webmentions.`);
     } else {
         debug(`Post ${tf.data.permalink} has no webmentions.`);
