@@ -73,7 +73,7 @@ module.exports = async function(config, options = {}) {
         sentFileTest: 'testSent.json',
         typeIcons: true,
         types: ['mention-of', 'in-reply-to'],
-        wmDir: '_data/_webmentions/_cache',
+        wmDir: '_data/_webmentions',
     };
 
     if (config.webmentionsSpec) {
