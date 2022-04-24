@@ -41,7 +41,7 @@ async function afterParsedTemplateFile(cfg, tf)
         return;
     }
 
-    let test = (cfg.mode == 'dev') ? true : false;
+    let test = (cfg.mode !== 'prod') ? true : false;
 
     for (let wm of tf.data.sendWebmentions) {
         if (!proc.hasBeenSent(url, wm, test)) {
