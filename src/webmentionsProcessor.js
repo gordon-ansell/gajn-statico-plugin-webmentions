@@ -163,7 +163,10 @@ class WebmentionsProcessor
         if (!test) {
 
             await wmsend(source, target, (err, obj) => {
-                if (err) throw err;
+                if (err) {
+                    syslog.warning(`Failed to send webmention from ${source} to ${target}.`)
+                    syslog.warning(`Error message: ${err.message}.`);
+                }
 
                 if (obj.success) {
                     syslog.notice("==> Sent webmention from: " + source + " to: " + target);

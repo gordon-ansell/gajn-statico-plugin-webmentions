@@ -160,7 +160,7 @@ class WebmentionsData
         
         if (isDev) {
             wmCached = this.readWebMentionsCache(true);
-            syslog.notice("Using test webmentions as we're in dev mode.")
+            syslog.notice(`Using test webmentions as we're in ${this.cfg.mode} mode.`);
         } else {
             wmCached = this.readWebMentionsCache();
         }
